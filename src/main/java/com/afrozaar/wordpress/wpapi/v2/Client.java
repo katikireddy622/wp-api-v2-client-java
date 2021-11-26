@@ -1065,7 +1065,7 @@ public class Client implements Wordpress {
         final RequestEntity.BodyBuilder builder = RequestEntity.method(method, uri)
                 .header(userAgentTuple.v1, userAgentTuple.v2);
         if (username != null && password != null) {
-            final Tuple2<String, String> authTuple = AuthUtil.authTuple(username, password);
+            final Tuple2<String, String> authTuple = AuthUtil.jwtAuthTuple(username, password);
             builder.header(authTuple.v1, authTuple.v2);
         }
 
